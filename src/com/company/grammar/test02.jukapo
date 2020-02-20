@@ -1,0 +1,9 @@
+premenna a
+premenna b
+nacitaj a
+b = b + 1
+opakuj a > 0
+b = a * b
+a = a - 1
+jukapo
+vypis b

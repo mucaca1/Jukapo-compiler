@@ -1,0 +1,16 @@
+premenna a
+premenna b
+premenna c
+c = 1
+nacitaj a
+opakuj 0 <= a
+vypis a
+b = 10
+opakuj 12 >= b
+vypis b
+b = 1 + b
+c = c * 2
+jukapo
+a = a - 1
+jukapo
+vypis c
