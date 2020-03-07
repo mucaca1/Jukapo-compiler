@@ -1,0 +1,5 @@
+opakuj 16
+jukapo 21
+premenna 23
+nacitaj 26
+vypis 32

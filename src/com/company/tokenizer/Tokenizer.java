@@ -7,6 +7,8 @@ import com.company.tokenizer.Token;
 
 public class Tokenizer {
 
+    int newLineBeforeNumber;
+
     String input;
     ArrayList<TokenData> tokens;
 
@@ -19,12 +21,16 @@ public class Tokenizer {
     public Tokenizer(String str) {
         input = str.trim();
 
+        newLineBeforeNumber = -1;
+
         Pattern pattern = Pattern.compile("[\n]");
         Matcher matcher = pattern.matcher(input);
         lineCount = 0;
+
         while (matcher.find()) {
             lineCount++;
         }
+
         lastLineCount = lineCount;
 
         tokens = new ArrayList<>();
@@ -33,7 +39,9 @@ public class Tokenizer {
         tokens.add(new TokenData(Pattern.compile("^(-)?\\d+[' '|\n]]?"), TokenType.NUMBER_LITERAL));
         tokens.add(new TokenData(Pattern.compile("^(\\n)"), TokenType.NEW_LINE));
 
-        for (String s : new String[]{"\\+", "\\-", "\\*", "\\/", "\\="}) {
+        tokens.add(new TokenData(Pattern.compile("^(\\=)"), TokenType.EQUALS));
+
+        for (String s : new String[]{"\\+", "\\-", "\\*", "\\/"}) {
             tokens.add(new TokenData(Pattern.compile("^(" + s + ")"), TokenType.MATH_OPERAND));
         }
 
@@ -44,7 +52,8 @@ public class Tokenizer {
 
     public Token nextToken() {
         int lineNumber = 1;
-        input = input.trim();
+
+        input = input.replaceFirst("^[ ]", "");
 
         Pattern pattern = Pattern.compile("[\n]");
         Matcher matcher = pattern.matcher(input);
@@ -55,13 +64,20 @@ public class Tokenizer {
 
         lineNumber += (lastLineCount - lineCount);
 
+        if(newLineBeforeNumber != - 1 && newLineBeforeNumber == lineNumber-1) {
+            newLineBeforeNumber++;
+            return (lastToken = new Token("\n", TokenType.NEW_LINE, lineNumber+1));
+        }
+
+        newLineBeforeNumber = lineNumber;
+
         if (pushBack) {
             pushBack = false;
             return lastToken;
         }
 
         if (input.isEmpty()) {
-            return (lastToken = new Token("", TokenType.EMPTY));
+            return (lastToken = new Token("", TokenType.EMPTY, lineNumber));
         }
 
         for (TokenData data : tokens) {
@@ -71,11 +87,11 @@ public class Tokenizer {
                 String token = matcher.group().trim();
                 input = matcher.replaceFirst("");
 
-                return (lastToken = new Token(token, data.getType()));
+                return (lastToken = new Token(token, data.getType(), lineNumber));
             }
         }
 
-        throw new IllegalStateException("Ci pana neviem parsovať chujoviny na riadku " + lineNumber + ". Konkrétne totok: " + input);
+        throw new IllegalArgumentException("Ci pana neviem parsovať chujoviny na riadku " + lineNumber + ". Konkrétne totok: " + input + ". To prvé slovíčko. Len aby si vedel.");
     }
 
     public boolean hasNextToken() {

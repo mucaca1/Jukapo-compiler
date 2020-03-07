@@ -7,5 +7,6 @@ public enum TokenType {
     IDENTIFIER,
     NEW_LINE,
     LOGIC_OPERAND,
-    MATH_OPERAND
+    MATH_OPERAND,
+    EQUALS
 }
