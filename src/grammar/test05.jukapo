@@ -12,5 +12,4 @@ b = 1 + b
 c = c * 2
 jukapo
 a = a - 1
-jukapo
 vypis c
