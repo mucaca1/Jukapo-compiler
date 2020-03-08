@@ -10,84 +10,90 @@ import com.company.simulator.Simulator;
 import com.company.tokenizer.Token;
 import jdk.nashorn.internal.ir.Block;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 
 public class Main {
 
     public static void main(String[] args) {
-        if(Configuration.devPrint)
-            System.out.println("Dev print enable");
+        try {
+            if (Configuration.devPrint)
+                System.out.println("Dev print enable");
 
-        GrammarAnalyse grammarAnalyse = new GrammarAnalyse();
-        grammarAnalyse.setGrammarFilePath(".\\src\\com\\company\\grammar\\grammar.txt");
-        grammarAnalyse.parseGrammar();
-        grammarAnalyse.saveAllIds();
-        grammarAnalyse.loadGrammar();
+            GrammarAnalyse grammarAnalyse = new GrammarAnalyse();
+            grammarAnalyse.setGrammarFilePath(".\\src\\com\\company\\grammar\\grammar.txt");
+            grammarAnalyse.parseGrammar();
+            grammarAnalyse.saveAllIds();
+            grammarAnalyse.loadGrammar();
 
-        Parser parser = new Parser();
-        if(Configuration.compileAll || Configuration.fileNumber == 1) {
-            parser.loadFilePath(".\\src\\com\\company\\grammar\\test01.jukapo");
-            parser.parseFile();
+            Parser parser = new Parser();
+            if (Configuration.compileAll || Configuration.fileNumber == 1) {
+                parser.loadFilePath(".\\src\\com\\company\\grammar\\test01.jukapo");
+                parser.parseFile();
 
-            grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
-            ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
-            Simulator simulator = new Simulator(c);
-            simulator.varChceck();
-            simulator.programNumberValidator();
+                grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
+                ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
+                Simulator simulator = new Simulator(c);
+                simulator.varChceck();
+                simulator.programNumberValidator();
 
-            simulator.run();
+                simulator.run();
+            }
+            if (Configuration.compileAll || Configuration.fileNumber == 2) {
+                parser.loadFilePath(".\\src\\com\\company\\grammar\\test02.jukapo");
+                parser.parseFile();
+
+                grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
+                ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
+                Simulator simulator = new Simulator(c);
+                simulator.varChceck();
+                simulator.programNumberValidator();
+
+                simulator.run();
+            }
+            if (Configuration.compileAll || Configuration.fileNumber == 3) {
+                parser.loadFilePath(".\\src\\com\\company\\grammar\\test03.jukapo");
+                parser.parseFile();
+
+                grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
+                ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
+                Simulator simulator = new Simulator(c);
+                simulator.varChceck();
+                simulator.programNumberValidator();
+
+                simulator.run();
+            }
+            if (Configuration.compileAll || Configuration.fileNumber == 4) {
+                parser.loadFilePath(".\\src\\com\\company\\grammar\\test04.jukapo");
+                parser.parseFile();
+
+                grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
+                ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
+                Simulator simulator = new Simulator(c);
+                simulator.varChceck();
+                simulator.programNumberValidator();
+
+                simulator.run();
+            }
+            if (Configuration.compileAll || Configuration.fileNumber == 5) {
+                parser.loadFilePath(".\\src\\com\\company\\grammar\\test05.jukapo");
+                parser.parseFile();
+
+                grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
+                ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
+                Simulator simulator = new Simulator(c);
+                simulator.varChceck();
+                simulator.programNumberValidator();
+
+                simulator.run();
+            }
+
+            if (Configuration.devPrint)
+                System.out.println("Done.");
         }
-        if(Configuration.compileAll || Configuration.fileNumber == 2) {
-            parser.loadFilePath(".\\src\\com\\company\\grammar\\test02.jukapo");
-            parser.parseFile();
-
-            grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
-            ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
-            Simulator simulator = new Simulator(c);
-            simulator.varChceck();
-            simulator.programNumberValidator();
-
-            simulator.run();
+        catch (Exception e) {
+            System.out.println("Chyba\n" + e.getMessage());
         }
-        if(Configuration.compileAll || Configuration.fileNumber == 3) {
-            parser.loadFilePath(".\\src\\com\\company\\grammar\\test03.jukapo");
-            parser.parseFile();
-
-            grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
-            ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
-            Simulator simulator = new Simulator(c);
-            simulator.varChceck();
-            simulator.programNumberValidator();
-
-            simulator.run();
-        }
-        if(Configuration.compileAll || Configuration.fileNumber == 4) {
-            parser.loadFilePath(".\\src\\com\\company\\grammar\\test04.jukapo");
-            parser.parseFile();
-
-            grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
-            ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
-            Simulator simulator = new Simulator(c);
-            simulator.varChceck();
-            simulator.programNumberValidator();
-
-            simulator.run();
-        }
-        if(Configuration.compileAll || Configuration.fileNumber == 5) {
-            parser.loadFilePath(".\\src\\com\\company\\grammar\\test05.jukapo");
-            parser.parseFile();
-
-            grammarAnalyse.chcekPair(new ArrayList<Token>(parser.getParseTokens()));
-            ArrayList<Command> c = grammarAnalyse.checkRues(new ArrayList<Token>(parser.getParseTokens()));
-            Simulator simulator = new Simulator(c);
-            simulator.varChceck();
-            simulator.programNumberValidator();
-
-            simulator.run();
-        }
-
-        if(Configuration.devPrint)
-            System.out.println("Done.");
     }
 }

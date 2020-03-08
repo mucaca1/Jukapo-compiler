@@ -65,7 +65,8 @@ public class Simulator {
                         program.get(i).setNextCommand(index);
                         program.get(index).setPrevCommand(i+1);
                     } else {
-                        program.get(i).setNextCommand(null);
+                        program.get(i).setNextCommand(index);
+                        program.get(i).setPrevCommand(null);
                     }
                 }
             }

@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fe9de1-c035-4248-94f1-379be9f60686" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/SupportFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/block/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/block/MathVariableBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/block/OpakujeBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/block/VariableBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/grammar/Automata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/grammar/GrammarAnalyse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/grammar/GrammarData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/grammar/GrammarType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/simulator/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/simulator/CycleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/simulator/OperandCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/simulator/Simulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/simulator/VariableCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/simulator/VariableHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/grammar/grammar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/grammar/grammar.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/grammar/GrammarAnalyse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/grammar/GrammarAnalyse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/grammar/test01.jukapo" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/grammar/test01.jukapo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/tokenizer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/tokenizer/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/tokenizer/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/tokenizer/TokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/simulator/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/simulator/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/simulator/VariableCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/simulator/VariableCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/tokenizer/Tokenizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,11 +101,25 @@
       <workItem from="1583225871900" duration="938000" />
       <workItem from="1583519158828" duration="2780000" />
       <workItem from="1583522010058" duration="65000" />
+      <workItem from="1583582693619" duration="160000" />
+      <workItem from="1583583994098" duration="2881000" />
     </task>
+    <task id="LOCAL-00001" summary="V 0.1">
+      <created>1583582810755</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583582810755</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="V 0.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582234489636">
@@ -154,10 +150,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1582493646323" />
-    <state x="577" y="113" key="CommitChangelistDialog2" timestamp="1583582772596">
+    <state x="577" y="113" key="CommitChangelistDialog2" timestamp="1583582809198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583582772596" />
+    <state x="577" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583582809198" />
     <state width="473" height="466" key="DebuggerActiveHint" timestamp="1582977685928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -170,42 +166,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582701154028" />
-    <state width="1877" height="433" key="GridCell.Tab.0.bottom" timestamp="1583522074264">
+    <state width="1877" height="433" key="GridCell.Tab.0.bottom" timestamp="1583586653512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583522074264" />
-    <state width="1877" height="433" key="GridCell.Tab.0.center" timestamp="1583522074264">
+    <state width="1877" height="433" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583586653512" />
+    <state width="1877" height="433" key="GridCell.Tab.0.center" timestamp="1583586653508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583522074264" />
-    <state width="1877" height="433" key="GridCell.Tab.0.left" timestamp="1583522074264">
+    <state width="1877" height="433" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583586653508" />
+    <state width="1877" height="433" key="GridCell.Tab.0.left" timestamp="1583586653508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583522074264" />
-    <state width="1877" height="433" key="GridCell.Tab.0.right" timestamp="1583522074264">
+    <state width="1877" height="433" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583586653508" />
+    <state width="1877" height="433" key="GridCell.Tab.0.right" timestamp="1583586653508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583522074264" />
-    <state width="1877" height="451" key="GridCell.Tab.1.bottom" timestamp="1583521942742">
+    <state width="1877" height="433" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583586653508" />
+    <state width="1877" height="451" key="GridCell.Tab.1.bottom" timestamp="1583586370325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="451" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583521942742" />
-    <state width="1877" height="451" key="GridCell.Tab.1.center" timestamp="1583521942740">
+    <state width="1877" height="451" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583586370325" />
+    <state width="1877" height="451" key="GridCell.Tab.1.center" timestamp="1583586370325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="451" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583521942740" />
-    <state width="1877" height="451" key="GridCell.Tab.1.left" timestamp="1583521942739">
+    <state width="1877" height="451" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583586370325" />
+    <state width="1877" height="451" key="GridCell.Tab.1.left" timestamp="1583586370325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="451" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583521942739" />
-    <state width="1877" height="451" key="GridCell.Tab.1.right" timestamp="1583521942740">
+    <state width="1877" height="451" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583586370325" />
+    <state width="1877" height="451" key="GridCell.Tab.1.right" timestamp="1583586370325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="451" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583521942740" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583582793574">
+    <state width="1877" height="451" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583586370325" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583582827318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583582793574" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583582827318" />
     <state x="523" y="123" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582896091533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,13 +237,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/simulator/Simulator.java</url>
-          <line>85</line>
+          <line>86</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/simulator/Simulator.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="98" />
+          <line>50</line>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

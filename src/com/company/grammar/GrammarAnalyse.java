@@ -110,7 +110,7 @@ public class GrammarAnalyse {
         String[] nonTerminal = SupportFunctions.readLineByLine("./nonTerminalIds.txt").split("\n");
         String[] key = SupportFunctions.readLineByLine("./keyWordIds.txt").split("\n");
 
-        String[] grammar = SupportFunctions.readLineByLine("C:\\Users\\krc\\Documents\\Jukapo compiler\\src\\com\\company\\grammar\\grammar.txt").split("\n");
+        String[] grammar = SupportFunctions.readLineByLine(".\\src\\com\\company\\grammar\\grammar.txt").split("\n");
 
         replaceRuleIdMapper.clear();
 
@@ -169,15 +169,15 @@ public class GrammarAnalyse {
                 stack.push(t);
             }
             else if(t.getToken().equals("jukapo")) {
-                lastToken = stack.pop();
-                if (lastToken == null) {
-                    throw new IllegalArgumentException("Chcel by som ťa pekne poprosiť, aby si začal príkazom opakuj pre jukamo na riadku : " + lastToken.getLine() + ". Ver mi. BUde to tak lepšie. Pre oboch." );
+                if (stack.empty()) {
+                    throw new IllegalArgumentException("Chcel by som ťa pekne poprosiť, aby si začal príkazom opakuj pre jukamo na riadku : " + t.getLine() + ". Ver mi. Bude to tak lepšie. Pre oboch." );
                 }
+                lastToken = stack.pop();
             }
         }
         if(!stack.empty()) {
             lastToken = stack.pop();
-            throw new IllegalArgumentException("Ci pana zabou si ukončiť opakovanie na riadku: " + lastToken.getLine() + ". Názov: " + lastToken.getToken() + ", a typ: " + lastToken.getType().toString() + ". Tak ako snáď si to ukončíš, nebudem to snáď opakovať až do konca." );
+            throw new IllegalArgumentException("Zabou si ukončiť opakovanie na riadku: " + lastToken.getLine() + ". Názov: " + lastToken.getToken() + ", a typ: " + lastToken.getType().toString() + "." );
         }
     }
 
@@ -239,7 +239,7 @@ public class GrammarAnalyse {
 
     Command checkAndParseSyntax(ArrayList<Token> parsedTokens) {
         int index = 0;
-        String ruleType = "očakávam príkaz";
+        String ruleType = "príkaz";
         String commandType = "";
 
         LinkedHashMap<String, String> rules = new LinkedHashMap<>();
@@ -247,7 +247,13 @@ public class GrammarAnalyse {
 
         Token lastToken = null;
         for (Token t : parsedTokens) {
+            if (index > 0) {
+                if (keyWords.containsKey(t.getToken())) {
+                    throw new IllegalArgumentException("ako argument nie je nozne pouzit klucove slovo.\nRiadok: " + t.getLine() + ", typ: " + t.getType().toString() + ", token: " + t.getToken());
+                }
+            }
             lastToken = t;
+            rules.remove("");
             Map<String, String> oldRules = new LinkedHashMap<String, String>();
             oldRules.putAll(rules);
             for (Map.Entry<String, String> r : oldRules.entrySet()) {
@@ -285,8 +291,9 @@ public class GrammarAnalyse {
 //                ruleType += (i != rules.size()-1) ? rules.get(i).split(" ")[0] + " alebo " : rules.get(i).split(" ")[0];
 //            }
             if(rules.isEmpty()) {
-                throw new IllegalArgumentException("Riadok: " + t.getLine() + ". token:" + t.getToken() + ". Typ: " + t.getType() + ".\nOcakavam " + ruleType);
+                throw new IllegalArgumentException("Riadok: " + t.getLine() + ". token:" + t.getToken() + ". Typ: " + t.getType() + ".\nOcakavam " + ruleType.substring(0, ruleType.length() - 7));
             }
+            index++;
         }
 
         if(ruleType.equals(" alebo ")) {
@@ -306,19 +313,21 @@ public class GrammarAnalyse {
         }
         else {
             for (Map.Entry<String, String> s : rules.entrySet()) {
-                switch (s.getValue().trim()) {
-                    case "<command>":
-                        return new VariableCommand(new ArrayList<Token>(parsedTokens));
-                    case "<cycle>":
-                        return new CycleCommand(new ArrayList<Token>(parsedTokens));
-                    case "<operand>":
-                        return new OperandCommand(new ArrayList<Token>(parsedTokens));
+                if (s.getKey().trim().equals("")) {
+                    switch (s.getValue().trim()) {
+                        case "<command>":
+                            return new VariableCommand(new ArrayList<Token>(parsedTokens));
+                        case "<cycle>":
+                            return new CycleCommand(new ArrayList<Token>(parsedTokens));
+                        case "<operand>":
+                            return new OperandCommand(new ArrayList<Token>(parsedTokens));
+                    }
                 }
             }
             if(lastToken != null)
-                throw new IllegalArgumentException("Ocakavam " + ruleType + "\nza riadokom: " + lastToken.getLine() + ". token:" + lastToken.getToken() + ". Typ: " + lastToken.getType());
+                throw new IllegalArgumentException("Ocakavam " + ruleType.substring(0, ruleType.length() - 7) + "\nna riadoku: " + lastToken.getLine() + ". token:" + lastToken.getToken() + ". Typ: " + lastToken.getType());
             else {
-                throw new IllegalArgumentException("dorobit");
+                throw new IllegalArgumentException("Ocakavam " + ruleType.substring(0, ruleType.length() - 7) + "\nPosledny token je null a preto neviem na akom riadku je chyba.");
             }
         }
 

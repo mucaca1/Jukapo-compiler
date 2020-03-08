@@ -16,15 +16,21 @@ public class VariableCommand extends Command {
         switch (tokens.get(0).getToken()) {
             case "nacitaj":
                 Scanner keyboard = new Scanner(System.in);
-                System.out.println("No tak poď. Napíš nejaké celé číslo: ");
-                int fromKeyboard = keyboard.nextInt();
+                System.out.println("Napíš celé číslo ktoré bude uložené do premennej " + tokens.get(1).getToken() + ": ");
+                int fromKeyboard = 0;
+                try {
+                    fromKeyboard = keyboard.nextInt();
+                }
+                catch (Exception e) {
+                    throw new IllegalArgumentException("Nastalo buď pretečenie, alebo si zadal číslo ktoré nie je celočíslelné, alebo string.");
+                }
                 variables.setValue(tokens.get(1).getToken(), fromKeyboard);
                 break;
             case "premenna":
                 variables.declareVariable(tokens.get(1).getToken());
                 break;
             case "vypis":
-                System.out.println("Ako kukol som sa na premennu " + tokens.get(1).getToken() + " a tam takéto niečo: " + variables.getValue(tokens.get(1).getToken()));
+                System.out.println("Obsah premennej  " + tokens.get(1).getToken() + ": " + variables.getValue(tokens.get(1).getToken()));
                 break;
         }
         return getNextCommand();

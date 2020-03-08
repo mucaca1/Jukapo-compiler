@@ -19,7 +19,7 @@ public class Tokenizer {
     private int lastLineCount;
 
     public Tokenizer(String str) {
-        input = str.trim();
+        input = str;
 
         newLineBeforeNumber = -1;
 
