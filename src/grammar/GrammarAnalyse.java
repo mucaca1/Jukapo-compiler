@@ -1,12 +1,12 @@
-package com.company.grammar;
+package grammar;
 
-import com.company.Configuration;
-import com.company.SupportFunctions;
-import com.company.simulator.*;
-import com.company.tokenizer.Token;
-import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-import sun.plugin.javascript.navig.LinkArray;
+import conf.Configuration;
+import conf.SupportFunctions;
+import simulator.Command;
+import simulator.CycleCommand;
+import simulator.OperandCommand;
+import simulator.VariableCommand;
+import tokenizer.Token;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -97,20 +97,20 @@ public class GrammarAnalyse {
             nonTerminalSymbols.forEach((s, integer) -> sbNonTerm.append(s).append(" ").append(integer).append("\n"));
             tokens.forEach((s, integer) -> sbToken.append(s).append(" ").append(integer).append("\n"));
 
-            Files.write(Paths.get("./keyWordIds.txt"), sbKeyWord.toString().getBytes());
-            Files.write(Paths.get("./nonTerminalIds.txt"), sbNonTerm.toString().getBytes());
-            Files.write(Paths.get("./tokenIds.txt"), sbToken.toString().getBytes());
+            Files.write(Paths.get(".\\grammar\\keyWordIds.txt"), sbKeyWord.toString().getBytes());
+            Files.write(Paths.get(".\\grammar\\nonTerminalIds.txt"), sbNonTerm.toString().getBytes());
+            Files.write(Paths.get(".\\grammar\\tokenIds.txt"), sbToken.toString().getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void loadGrammar() {
-        String[] token = SupportFunctions.readLineByLine("./tokenIds.txt").split("\n");
-        String[] nonTerminal = SupportFunctions.readLineByLine("./nonTerminalIds.txt").split("\n");
-        String[] key = SupportFunctions.readLineByLine("./keyWordIds.txt").split("\n");
+        String[] token = SupportFunctions.readLineByLine(".\\grammar\\tokenIds.txt").split("\n");
+        String[] nonTerminal = SupportFunctions.readLineByLine(".\\grammar\\nonTerminalIds.txt").split("\n");
+        String[] key = SupportFunctions.readLineByLine(".\\grammar\\keyWordIds.txt").split("\n");
 
-        String[] grammar = SupportFunctions.readLineByLine(".\\src\\com\\company\\grammar\\grammar.txt").split("\n");
+        String[] grammar = SupportFunctions.readLineByLine(".\\grammar\\grammar.txt").split("\n");
 
         replaceRuleIdMapper.clear();
 
@@ -249,7 +249,7 @@ public class GrammarAnalyse {
         for (Token t : parsedTokens) {
             if (index > 0) {
                 if (keyWords.containsKey(t.getToken())) {
-                    throw new IllegalArgumentException("ako argument nie je nozne pouzit klucove slovo.\nRiadok: " + t.getLine() + ", typ: " + t.getType().toString() + ", token: " + t.getToken());
+                    throw new IllegalArgumentException("Ako argument nie je možneé použiť kľúčové slovo.\nRiadok: " + t.getLine() + ", typ: " + t.getType().toString() + ", token: " + t.getToken());
                 }
             }
             lastToken = t;

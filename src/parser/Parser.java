@@ -1,9 +1,9 @@
-package com.company.parser;
+package parser;
 
-import com.company.Configuration;
-import com.company.SupportFunctions;
-import com.company.tokenizer.Token;
-import com.company.tokenizer.Tokenizer;
+import conf.Configuration;
+import conf.SupportFunctions;
+import tokenizer.Token;
+import tokenizer.Tokenizer;
 
 import java.util.LinkedHashSet;
 import java.util.logging.Logger;
@@ -16,7 +16,8 @@ public class Parser {
     private LinkedHashSet<Token> parseTokens;
 
     public void loadFilePath(String path) {
-        LOGGER.info("Path changing from " + filePath + " to " + path);
+        if (Configuration.devPrint)
+            LOGGER.info("Path changing from " + filePath + " to " + path);
         filePath = path;
         parseTokens = new LinkedHashSet<>();
     }

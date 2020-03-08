@@ -1,7 +1,6 @@
-package com.company.simulator;
+package simulator;
 
-import com.company.tokenizer.Token;
-import org.omg.CORBA.COMM_FAILURE;
+import tokenizer.Token;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -21,6 +20,9 @@ public class Simulator {
         for (Command c : program) {
             if (c instanceof VariableCommand) {
                 if (c.tokens.get(0).getToken().equals("premenna")) {
+                    if (identifiers.contains(c.tokens.get(1).getToken())) {
+                        throw new IllegalArgumentException("Premenná: " + c.tokens.get(1).getToken() + " ktorá sa nachádza na riadku " + c.tokens.get(1).getLine() + " už bola zadefinovaná!");
+                    }
                     identifiers.add(c.tokens.get(1).getToken());
                 } else {
                     if (!identifiers.contains(c.tokens.get(1).getToken())) {

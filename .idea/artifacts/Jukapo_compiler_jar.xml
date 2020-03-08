@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Jukapo compiler:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Jukapo_compiler_jar</output-path>
+    <root id="archive" name="Jukapo compiler.jar">
+      <element id="module-output" name="Jukapo compiler" />
+    </root>
+  </artifact>
+</component>

@@ -1,4 +1,4 @@
-package com.company.block;
+package block;
 
 import java.util.regex.Pattern;
 

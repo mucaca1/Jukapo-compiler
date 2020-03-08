@@ -1,6 +1,4 @@
-package com.company.grammar;
-
-import java.util.regex.Pattern;
+package grammar;
 
 public enum GrammarType {
     NON_TERMINAL,

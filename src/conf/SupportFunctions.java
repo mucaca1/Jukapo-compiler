@@ -1,4 +1,4 @@
-package com.company;
+package conf;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

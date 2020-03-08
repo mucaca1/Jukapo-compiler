@@ -1,4 +1,4 @@
-package com.company.simulator;
+package simulator;
 
 import java.util.LinkedHashMap;
 

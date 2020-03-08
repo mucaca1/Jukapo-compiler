@@ -1,12 +1,12 @@
-package com.company.tokenizer;
+package grammar;
 
 import java.util.regex.Pattern;
 
-public class TokenData {
-    TokenType type;
+public class GrammarData {
+    GrammarType type;
     Pattern pattern;
 
-    public TokenData(Pattern pattern, TokenType tokenType) {
+    public GrammarData(Pattern pattern, GrammarType tokenType) {
         this.pattern = pattern;
         this.type = tokenType;
     }
@@ -15,7 +15,8 @@ public class TokenData {
         return pattern;
     }
 
-    public TokenType getType() {
+    public GrammarType getType() {
         return type;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.company.tokenizer;
+package tokenizer;
 
 public class Token {
     private String token;

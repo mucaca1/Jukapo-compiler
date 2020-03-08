@@ -1,4 +1,4 @@
-package com.company.tokenizer;
+package tokenizer;
 
 public enum TokenType {
     EMPTY,

@@ -1,9 +1,8 @@
-package com.company.tokenizer;
+package tokenizer;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.company.tokenizer.Token;
 
 public class Tokenizer {
 

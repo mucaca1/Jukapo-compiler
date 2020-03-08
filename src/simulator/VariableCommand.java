@@ -1,6 +1,6 @@
-package com.company.simulator;
+package simulator;
 
-import com.company.tokenizer.Token;
+import tokenizer.Token;
 
 import java.util.ArrayList;
 import java.util.Scanner;

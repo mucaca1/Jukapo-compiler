@@ -1,7 +1,7 @@
-package com.company.simulator;
+package simulator;
 
-import com.company.SupportFunctions;
-import com.company.tokenizer.Token;
+import conf.SupportFunctions;
+import tokenizer.Token;
 
 import java.util.ArrayList;
 
